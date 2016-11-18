@@ -204,7 +204,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
 
     private boolean hasPermission(String permission){
         if(needsPermission()){
-            return(checkSelfPermission(permission)== PackageManager.PERMISSION_GRANTED);
+            //return(checkSelfPermission(permission)== PackageManager.PERMISSION_GRANTED);
         }
         return true;
     }

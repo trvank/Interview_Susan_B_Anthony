@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class Quotes {
     Random rng;
+    private String quoteOnLucyStone;
 
     /**
      * Constructor
@@ -21,6 +22,8 @@ public class Quotes {
     /*
         Section of various quotes, ordered by topic
      */
+
+    /* Thomas's half */
     private String getQuoteOnSuffrage() {
         final int numQuotes = 4;
         String [] quotes = new String [numQuotes];
@@ -69,6 +72,8 @@ public class Quotes {
     private String getQuoteOnBirth() {
         return "I was born in the town of Adams Massachusettes on February 15 1820.";
     }
+
+    /* Scott's section */
     private String getQuoteOnDeath() {
         final int numQuotes = 2;
         String [] quotes = new String [numQuotes];
@@ -83,19 +88,38 @@ public class Quotes {
         return "Why did they have to make it the same size as a quarter?";
     }
     private String getQuoteOnContemporaries() {
-        return "Some of my favorite contemporaries included abolitionists like William Lloyd Garrison";
+        final int numQuotes = 2;
+        String [] quotes = new String [numQuotes];
+        quotes[0] = "Some of my favorite contemporaries included abolitionists like William Lloyd Garrison";
+        quotes[1] = "Lucy Stone was a close ally in the women's suffrage movement.";
+        return quotes[rng.nextInt(numQuotes)];
     }
 
     private String getQuoteOnFifteenth() {
-        return "The Fifteenth Amendment abolished slavery.  It was ratified in Eighteen Seventy";
-    }
+        final int numQuotes = 2;
+        String [] quotes = new String [numQuotes];
+        quotes[0] = "I supported the Fifteenth amendment.  The abolition of slavery was important.  But my fight was for the woman's right to vote.";
+        quotes[1] = "The fifteenth amendment abolished slavery.  The abolition movement gave us a template for how to peacefully fight for the woman's right to vote.";
+        return quotes[rng.nextInt(numQuotes)];
+        }
 
     private String getQuoteOnNineteenth() {
         return "The Nineteenth Amendment legalized women's right to vote.  It was ratified in Nineteen Twenty. That's 100 years after my birth, and 14 years after my death.";
     }
+    public String getQuoteOnWhoYouAre() {
+        return "I am Susan B Anthony.  I started out in the temperance movement.  When I realized that women's voices in this movement were being ignored because the women couldn't vote, I decided to change my focus to the women's suffrage movement.";
+    }
+
+    public String getQuoteOnLucyStone() {
+        return "Lucy Stone was my partner in leading the women's suffrage movement.  It owes as much to her as it does to me.";
+    }
+
+    public String getQuoteOnWilliamLloydGarrison() {
+        return "William Garrison was an inspirational figure in my lifetime.  He led the abolitionist movement that served as a model of the women's suffrage movement.";
+    }
 
     public String getQuoteOnTopics() {
-        final int numQuotes = 14;
+        final int numQuotes = 15;
         String [] quotes = new String [numQuotes];
         quotes[0] = "women's suffrage";
         quotes[1] = "slavery";
@@ -111,18 +135,20 @@ public class Quotes {
         quotes[11] = "my middle name";
         quotes[12] = "the dollar coin";
         quotes[13] = "my contemporaries";
+        quotes[14] = "telling you about myself";
         return "I can discuss topics ranging from " + quotes[rng.nextInt(numQuotes)]
                 + ", to " + quotes[rng.nextInt(numQuotes)] + ", to " + quotes[rng.nextInt(numQuotes)] ;
     }
 
     /**
      * Select which type of quote to return based on the input topic
+     *
      * @param topic The topic string
      * @return The quote corresponding to the input topic
      */
     public String getQuoteOn(String topic) {
         String quote = "";
-        switch(topic) {
+        switch (topic) {
             case "suffrage":
                 quote = getQuoteOnSuffrage();
                 break;
@@ -174,6 +200,15 @@ public class Quotes {
             case "empty":
                 quote = getQuoteOnTopics();
                 break;
+            case "who_are_you":
+                quote = getQuoteOnWhoYouAre();
+                break;
+            case "Lucy Stone":
+                quote = getQuoteOnLucyStone();
+                break;
+            case "William Lloyd Garrison":
+                quote = getQuoteOnWilliamLloydGarrison();
+                break;
             default:
                 quote = getQuoteOnTopics();
                 break;
@@ -181,7 +216,4 @@ public class Quotes {
         }
         return quote;
     }
-
-
-
 }

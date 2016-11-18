@@ -26,14 +26,15 @@ public class Analyzer {
 
         if (action.compareTo("select_topic") == 0) {
             topic = map.get("topic").getAsString();
+            topic.replace("\"", "");
             quote = quotes.getQuoteOn(topic);
-
             q.set_speech_string(quote);
             q.set_text_string(quote);
 
         }
         else if (action.compareTo("define") == 0) {
             topic = map.get("definition").getAsString();
+            topic.replace("\"", "");
             quote = quotes.getQuoteOn(topic);
             q.set_speech_string(quote);
             q.set_text_string(quote);
