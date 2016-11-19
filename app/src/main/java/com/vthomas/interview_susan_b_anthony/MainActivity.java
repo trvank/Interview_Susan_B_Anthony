@@ -184,7 +184,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
 
        //TODO from the result, determine what is added to the conversation TextView and what is spoken
 
-        q = analyzer.getResult(result.getParameters(), "");
+        q = analyzer.getResult(result.getParameters(), result.getAction());
 
         //Show results in TextView
         result_text.setText(result_text.getText() + "You: " + result.getResolvedQuery() + "\n\n");//add the user's question
