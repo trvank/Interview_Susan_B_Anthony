@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class Quotes {
     Random rng;
+
     private String quoteOnLucyStone;
 
     /**
@@ -147,51 +148,94 @@ public class Quotes {
     }
 
     /* Scott's section */
-    private String getQuoteOnDeath() {
+    private String getQuoteOnDeath() {//done
+        final int numQuotes = 3;
+        String [] quotes = new String [numQuotes];
+        quotes[0] = "I died at the age of Eighty Six in Rochester New York in Nineteen Oh Six, fourteen years before " +
+                "the ratification of the Nineteenth amendment.";
+        quotes[1] = "As I said two years prior to my passing in Nineteen Oh Six, quote: \"The world has never witnessed a " +
+                "greater revolution than in the sphere of woman during this fifty years.\" " +
+                "And that is the truth!";
+        quotes[2] = "Although I passed away a mere fourteen years before the ratification of the " +
+                "nineteenth amendment, I am proud of what I could accomplish over my lifetime.  " +
+                "As I once said, quote, \"Now, after 40 years of agitation, the idea is beginning to prevail that women " +
+                "were created for themselves, for their own happiness, and for the welfare of the world.\"";
+        return quoteRandomizer(quotes);
+    }
+    private String getQuoteOnMiddleName() {//done
+        final int numQuotes = 3;
+        String [] quotes = new String [numQuotes];
+        quotes[0] = "My middle name is Brownell. I suppose that Susan Anthony is a fairly common name." +
+                "So that's why people refer to me as Susan B Anthony.";
+        return quoteRandomizer(quotes);
+    }
+
+    private String getQuoteOnDollar() {//done
         final int numQuotes = 2;
         String [] quotes = new String [numQuotes];
-        quotes[0] = "I died at the age of 86 in Rochester New York in 1906, fourteen years before the ratification of the 19th amendment.";
-        quotes[1] = "Oh, if I could but live another century and see the fruition of all the work for women! There is so much yet to be done. ";
-        return quotes[rng.nextInt(numQuotes)];
+        quotes[0] = "The Susan B Anthony dollar coin was first minted in Nineteen Seventy Nine. " +
+                "Its production ended just two years later. It lacked popularity due to being the same size" +
+                "as the washington quarter.";
+        quotes[1] = "I appreciate the thought.  But why did they have to make it the same size and material as a quarter?";
+        return quoteRandomizer(quotes);
     }
-    private String getQuoteOnMiddleName() {
-        return "My middle name is Brownell";
-    }
-    private String getQuoteOnDollar() {
-        return "Why did they have to make it the same size as a quarter?";
-    }
-    private String getQuoteOnContemporaries() {
+    private String getQuoteOnContemporaries() {//done
         final int numQuotes = 2;
         String [] quotes = new String [numQuotes];
         quotes[0] = "Some of my favorite contemporaries included abolitionists like William Lloyd Garrison";
         quotes[1] = "Lucy Stone was a close ally in the women's suffrage movement.";
-        return quotes[rng.nextInt(numQuotes)];
+        return quoteRandomizer(quotes);
     }
 
-    private String getQuoteOnFifteenth() {
-        final int numQuotes = 2;
+    private String getQuoteOnFifteenth() {//done
+        final int numQuotes = 3;
         String [] quotes = new String [numQuotes];
-        quotes[0] = "I supported the Fifteenth amendment.  The abolition of slavery was important.  But my fight was for the woman's right to vote.";
-        quotes[1] = "The fifteenth amendment abolished slavery.  The abolition movement gave us a template for how to peacefully fight for the woman's right to vote.";
-        return quotes[rng.nextInt(numQuotes)];
-        }
-
-    private String getQuoteOnNineteenth() {
-        return "The Nineteenth Amendment legalized women's right to vote.  It was ratified in Nineteen Twenty. That's 100 years after my birth, and 14 years after my death.";
-    }
-    public String getQuoteOnWhoYouAre() {
-        return "I am Susan B Anthony.  I started out in the temperance movement.  When I realized that women's voices in this movement were being ignored because the women couldn't vote, I decided to change my focus to the women's suffrage movement.";
+        quotes[0] = "The fifteenth amendment abolished slavery.  The abolition movement gave us a " +
+                "template for how to peacefully fight for the woman's right to vote.";
+        quotes[1] = "The Fifteenth Amendment reads \"The right of citizens of the United States " +
+                "to vote shall not be denied or abridged by the United States or by any State on " +
+                "account of race, color, or previous condition of servitude.\"";
+        quotes[2] = "I supported the Fifteenth amendment.  The abolition of slavery was " +
+                "important.  But my fight was for the woman's right to vote.";
+        return quoteRandomizer(quotes);
     }
 
-    public String getQuoteOnLucyStone() {
-        return "Lucy Stone was my partner in leading the women's suffrage movement.  It owes as much to her as it does to me.";
+    private String getQuoteOnNineteenth() {//done
+        final int numQuotes = 3;
+        String [] quotes = new String [numQuotes];
+        quotes[0] = "The Nineteenth Amendment legalized women's right to vote.  It was ratified in " +
+                "Nineteen Twenty. That's one hundred years after my birth.  Sadly, I was unable to " +
+                "witness this historic event.  It was ratified fourteen years after my death.";
+        quotes[1] = "The Nineteenth amendment is identical to the Fifteenth amendment, except the " +
+                "Nineteenth prohibits the denial of suffrage because of \"sex\".  And the fifteenth because" +
+                "of \"race, color, or previous condition of servitude\"";
+        quotes[3] = "The Nineteenth amendment reads: \"The right of citizens of the United States " +
+                "to vote shall not be denied or abridged by the United States or by any State on account of sex. \"";
+        return quoteRandomizer(quotes);
+    }
+    private String getQuoteOnWhoYouAre() {//done
+        return "I am Susan B Anthony.  I started out in the temperance movement.  When I realized " +
+                "that women's voices in this movement were being ignored because the women couldn't " +
+                "vote, I decided to change my focus to the women's suffrage movement.";
     }
 
-    public String getQuoteOnWilliamLloydGarrison() {
-        return "William Garrison was an inspirational figure in my lifetime.  He led the abolitionist movement that served as a model of the women's suffrage movement.";
+    private String getQuoteOnLucyStone() {//done
+        return "Lucy Stone was my partner in leading the women's suffrage movement.  It owes as " +
+                "much to her as it does to me.";
     }
 
-    public String getQuoteOnTopics() {
+    private String getQuoteOnWilliamLloydGarrison() {//done
+        return "William Garrison was an inspirational figure in my lifetime.  He led the " +
+                "abolitionist movement that served as a model of the women's suffrage movement.";
+    }
+
+    // TODO: Eliminate the possibility of repeating the same quote on successive queries
+    private String quoteRandomizer(String [] quoteArray) {
+        String quote = quoteArray[rng.nextInt(quoteArray.length)];
+        return quote;
+    }
+
+    private String getQuoteOnTopics() {
         final int numQuotes = 15;
         String [] quotes = new String [numQuotes];
         quotes[0] = "women's suffrage";
