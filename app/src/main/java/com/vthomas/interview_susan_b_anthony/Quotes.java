@@ -9,7 +9,8 @@ import java.util.Random;
 
 
 public class Quotes {
-    Random rng;
+    static Random rng;
+    static private int quoteIndex = 0;
 
     private String quoteOnLucyStone;
 
@@ -42,7 +43,7 @@ public class Quotes {
         quotes[3] = "The legal right for women to vote took decades.  Can you believe I was even arrested for voting?  The work of the suffrage movement, however, began to show as " +
                 "women won the right to vote in some states.  We saw victories in Wyoming in 1869 and then in Utah the following year.  Around this time,  " +
                 "some states invited me to address the state legislature.  A national victory would become a reality with the adoption of the 19th amendment.";
-        return quotes[rng.nextInt(numQuotes)];
+        return quoteRandomizer(quotes);
     }
     private String getQuoteOnSlavery() {//done
         final int numQuotes = 3;
@@ -55,7 +56,7 @@ public class Quotes {
                 "for the American Anti Slavery Society for which I organized anti slavery meeting throughout the state. " +
                 " To those who asked what was to become of slaves after they were freed, I responded  " +
                 "\"Let us open all our schools. Let us admit him into all our mechanic shops, stores, offices, and lucrative business avocations. let him rent such pew in the church, and occupy such seat in the theatre. Extend to him all the rights of Citizenship.\" ";
-        return quotes[rng.nextInt(numQuotes)];
+        return quoteRandomizer(quotes);
     }
     private String getQuoteOnEqualPay() {//done
         final int numQuotes = 2;
@@ -67,7 +68,7 @@ public class Quotes {
         quotes[1] = "I tried to establish trade schools for women in printing.  There was a time when printers in New York went on strike and I called for " +
                 "employers to hire women in place of the men on strike.  My hope was to prove how these women printers were capable of doing as good a job as " +
                 "men and deserve equal pay.";
-        return quotes[rng.nextInt(numQuotes)];
+        return quoteRandomizer(quotes);
     }
     private String getQuoteOnBicycle() {//done
         return "I love bicycles!  In fact, Let me tell you what I think of bicycling. I think it has done more to emancipate women than anything else in the world. It gives women a feeling of freedom and self-reliance. I stand and rejoice every time I see a woman ride by on a wheel; the picture of free, untrammeled womanhood.";
@@ -93,7 +94,7 @@ public class Quotes {
         quotes[2] = "It always happened that the men I wanted were those I could not get, and those who wanted me I wouldn't have.";
         quotes[3] = "Given the rule of marriage in my time, my belief was that If women will not accept marriage with subjugation, nor men proffer it withough, there is, there can be, no alternative.  " +
                 "The woman who will not be ruled must live without marriage.";
-        return quotes[rng.nextInt(numQuotes)];
+        return quoteRandomizer(quotes);
     }
     private String getQuoteOnNewspaper() {//done
         final int numQuotes = 2;
@@ -105,7 +106,7 @@ public class Quotes {
                 "My goal for The Revolution was to sort of take the place of space left by those papers.  I like to think we succeeded and " +
                 "really helped give voice to the suffrage movement. " +
                 "I wanted the paper to grow into a daily paper with its own printing press, all owned and operated by women.";
-        return quotes[rng.nextInt(numQuotes)];
+        return quoteRandomizer(quotes);
     }
     private String getQuoteOnArrest() {//done
         final int numQuotes = 4;
@@ -125,7 +126,7 @@ public class Quotes {
                 "I proclaimed that  \"I shall never pay a dollar of your unjust penalty\" and I never did pay the fine. " +
                 "The justice decided not to put me in custody.  I believe his motive was to keep me from appealing the case to the Supreme Court, " +
                 "which I was not able to do because I was not imprisoned.";
-        return quotes[rng.nextInt(numQuotes)];
+        return quoteRandomizer(quotes);
     }
     private String getQuoteOnTemperance() {//done
         final int numQuotes = 3;
@@ -141,7 +142,7 @@ public class Quotes {
                 "While a three day battle over whether women should be allowed to speak ensued, I was denied my opportunity to talk at the convention.  " +
                 "\"No advanced step taken by women has been so bitterly contested as that of speaking in public.  " +
                 "For nothing which they have attempted, not even to secure suffrage, have they been so abused, condemned and antagonized.\"";
-        return quotes[rng.nextInt(numQuotes)];
+        return quoteRandomizer(quotes);
     }
     private String getQuoteOnBirth() {//done - not much to say on birth
         return "I was born in the town of Adams Massachusetts on February 15 1820.";
@@ -209,7 +210,7 @@ public class Quotes {
         quotes[1] = "The Nineteenth amendment is identical to the Fifteenth amendment, except the " +
                 "Nineteenth prohibits the denial of suffrage because of \"sex\".  And the fifteenth because" +
                 "of \"race, color, or previous condition of servitude\"";
-        quotes[3] = "The Nineteenth amendment reads: \"The right of citizens of the United States " +
+        quotes[2] = "The Nineteenth amendment reads: \"The right of citizens of the United States " +
                 "to vote shall not be denied or abridged by the United States or by any State on account of sex. \"";
         return quoteRandomizer(quotes);
     }
@@ -229,9 +230,15 @@ public class Quotes {
                 "abolitionist movement that served as a model of the women's suffrage movement.";
     }
 
-    // TODO: Eliminate the possibility of repeating the same quote on successive queries
-    private String quoteRandomizer(String [] quoteArray) {
-        String quote = quoteArray[rng.nextInt(quoteArray.length)];
+    /**
+     * Randomizes which quote to display. In fact, this is sequentially saying each quote and
+     * rolling-over to the beginning based on the mod of the array-length.
+     * @param quoteArray The array of quote strings to randomize
+     * @return A semi-random quote string
+     */
+    static private String quoteRandomizer(String [] quoteArray) {
+        String quote = quoteArray[quoteIndex % quoteArray.length];
+        quoteIndex++;
         return quote;
     }
 

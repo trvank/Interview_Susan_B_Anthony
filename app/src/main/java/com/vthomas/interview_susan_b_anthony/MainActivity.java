@@ -191,7 +191,14 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
         result_text.setText(result_text.getText() + "Action: " + result.getAction() +
                 "\n\nParameters: " + parameterString +
                 "\n\nResponse: " + q.get_text_string() + "\n\n");
-        scroller.fullScroll(ScrollView.FOCUS_DOWN);
+        //scroller.fullScroll(ScrollView.FOCUS_DOWN);
+
+        scroller.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                scroller.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        },1000);
 
         // And speak it
 //        speakWords(q.get_speech_string());
