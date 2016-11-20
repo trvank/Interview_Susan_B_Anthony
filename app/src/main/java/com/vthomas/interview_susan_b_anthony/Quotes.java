@@ -210,7 +210,7 @@ public class Quotes {
         quotes[1] = "The Nineteenth amendment is identical to the Fifteenth amendment, except the " +
                 "Nineteenth prohibits the denial of suffrage because of \"sex\".  And the fifteenth because" +
                 "of \"race, color, or previous condition of servitude\"";
-        quotes[3] = "The Nineteenth amendment reads: \"The right of citizens of the United States " +
+        quotes[2] = "The Nineteenth amendment reads: \"The right of citizens of the United States " +
                 "to vote shall not be denied or abridged by the United States or by any State on account of sex. \"";
         return quoteRandomizer(quotes);
     }
