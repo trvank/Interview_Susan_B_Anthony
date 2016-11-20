@@ -134,7 +134,7 @@ public class Quotes {
         quotes[0] = "Temperance, or the abstinence from alcohol, is in fact a woman's rights issue. " +
                 "Because husbands maintained all the power in a marriage, wives of drunken men were left with few legal options " +
                 "even in the events of abuse and when all of the family's money went to alcohol.";
-        quotes[1] = "I was a member of the Daughters of Temperance in my early years which gave me the opportunity to deliver public speeches at our meetings. " +
+        quotes[1] = "I was a member of the Daughters of Temperance in my early years which gave me the opportunity to deliver public speeches about alcohol abstinence. " +
                 "I went on to be elected as a delegate to the state temperance convention.  However, when I tried to deliver my speech, " +
                 "would not allow me to speak because women delegates were to be seen and not heard.  We were there to learn.  " +
                 "I, along with some of the other women attending, walked out and started the Women's State Temperance Society.  ";
@@ -248,11 +248,11 @@ public class Quotes {
         quotes[0] = "women's suffrage";
         quotes[1] = "slavery";
         quotes[2] = "equal pay for equal work";
-        quotes[3] = "bicycle";
+        quotes[3] = "bicycles";
         quotes[4] = "religion";
         quotes[5] = "marriage";
-        quotes[6] = "newspaper";
-        quotes[7] = "arrest";
+        quotes[6] = "my newspaper";
+        quotes[7] = "my arrest";
         quotes[8] = "temperance";
         quotes[9] = "my birth";
         quotes[10] = "my death";
@@ -324,7 +324,7 @@ public class Quotes {
             case "empty":
                 quote = getQuoteOnTopics();
                 break;
-            case "who_are_you":
+            case "you":
                 quote = getQuoteOnWhoYouAre();
                 break;
             case "Lucy Stone":

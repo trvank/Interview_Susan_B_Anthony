@@ -35,8 +35,8 @@ public class Analyzer {
             }
             else{
                 quote = quotes.getQuoteOn(topic);
-                q.set_speech_string("I may have misunderstood " + quote);
-                q.set_text_string("I may have misunderstood " + quote);
+                q.set_speech_string(quote);
+                q.set_text_string(quote);
             }
 
         }
@@ -50,8 +50,8 @@ public class Analyzer {
             }
             else{
                 quote = quotes.getQuoteOn(topic);
-                q.set_speech_string("I may have misunderstood " + quote);
-                q.set_text_string("I may have misunderstood " + quote);
+                q.set_speech_string(quote);
+                q.set_text_string(quote);
             }
         }
 

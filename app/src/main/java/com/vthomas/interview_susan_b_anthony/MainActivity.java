@@ -27,6 +27,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -156,6 +157,8 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
     //action for help button will offer suggestions on topics the user might
     //ask Susan about
     public void help(View view) {
+        Quotes temp = new Quotes();
+        speakWords(temp.getQuoteOn(""));
     }
 
     //action for the speak button will record the user's quesion and send to ai.api
@@ -182,7 +185,6 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
             }
         }
 
-       //TODO from the result, determine what is added to the conversation TextView and what is spoken
 
         q = analyzer.getResult(result.getParameters(), result.getAction());
 
@@ -198,7 +200,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
             public void run() {
                 scroller.fullScroll(ScrollView.FOCUS_DOWN);
             }
-        },1000);
+        }, 1000);
 
         // And speak it
 //        speakWords(q.get_speech_string());
