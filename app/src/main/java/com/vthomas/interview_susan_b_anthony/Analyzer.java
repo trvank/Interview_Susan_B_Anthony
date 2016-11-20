@@ -25,6 +25,7 @@ public class Analyzer {
         q.set_text_string("Hello, I am Susan B. Anthony");
 
         if (action.compareTo("select_topic") == 0) {
+            //make sure parameter, otherwise error recieved with null.getAsString
             if(map.containsKey("topic")) {
                 topic = map.get("topic").getAsString();
                 topic.replace("\"", "");
