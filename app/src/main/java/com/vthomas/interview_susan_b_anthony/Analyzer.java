@@ -25,20 +25,36 @@ public class Analyzer {
         q.set_text_string("Hello, I am Susan B. Anthony");
 
         if (action.compareTo("select_topic") == 0) {
-            topic = map.get("topic").getAsString();
-            topic.replace("\"", "");
-            quote = quotes.getQuoteOn(topic);
-            q.set_speech_string(quote);
-            q.set_text_string(quote);
+            if(map.containsKey("topic")) {
+                topic = map.get("topic").getAsString();
+                topic.replace("\"", "");
+                quote = quotes.getQuoteOn(topic);
+                q.set_speech_string(quote);
+                q.set_text_string(quote);
+            }
+            else{
+                quote = quotes.getQuoteOn(topic);
+                q.set_speech_string("I may have misunderstood " + quote);
+                q.set_text_string("I may have misunderstood " + quote);
+            }
 
         }
         else if (action.compareTo("define") == 0) {
-            topic = map.get("definition").getAsString();
-            topic.replace("\"", "");
-            quote = quotes.getQuoteOn(topic);
-            q.set_speech_string(quote);
-            q.set_text_string(quote);
+            if(map.containsKey("definition")) {
+                topic = map.get("definition").getAsString();
+                topic.replace("\"", "");
+                quote = quotes.getQuoteOn(topic);
+                q.set_speech_string(quote);
+                q.set_text_string(quote);
+            }
+            else{
+                quote = quotes.getQuoteOn(topic);
+                q.set_speech_string("I may have misunderstood " + quote);
+                q.set_text_string("I may have misunderstood " + quote);
+            }
         }
+
+
         else { // doesn't match any action
             topic = "empty";
             quote = quotes.getQuoteOn(topic);

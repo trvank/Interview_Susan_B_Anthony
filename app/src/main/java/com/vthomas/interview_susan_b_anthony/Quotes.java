@@ -44,7 +44,7 @@ public class Quotes {
         return quotes[rng.nextInt(numQuotes)];
     }
     private String getQuoteOnSlavery() {//done
-        final int numQuotes = 2;
+        final int numQuotes = 3;
         String [] quotes = new String [numQuotes];
         quotes[0] = "When I was only 16, I was collecting petitions against slavery in an organized resistance to the prohibition of anti-slavery petitions. " +
                 "About 15 years later, I helped organizing an anti-slavery convention in Rochester.";
@@ -90,7 +90,7 @@ public class Quotes {
         quotes[1] = "I very much despised the laws that gave husbands all of the power in a marriage.  " +
                 "\"by marriage, the husband and wife are one person in law:  that is, the very being or legal existence of the woman is suspended during the marriage.\"";
         quotes[2] = "It always happened that the men I wanted were those I could not get, and those who wanted me I wouldn't have.";
-        quotes[1] = "Given the rule of marriage in my time, my belief was that If women will not accept marriage with subjugation, nor men proffer it withough, there is, there can be, no alternative.  " +
+        quotes[3] = "Given the rule of marriage in my time, my belief was that If women will not accept marriage with subjugation, nor men proffer it withough, there is, there can be, no alternative.  " +
                 "The woman who will not be ruled must live without marriage.";
         return quotes[rng.nextInt(numQuotes)];
     }

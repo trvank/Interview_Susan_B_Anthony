@@ -31,7 +31,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class MainActivity extends Activity implements AIListener, TextToSpeech.OnInitListener{
-    private String CLIENT_ACCESS_TOKEN = "e957b68ccce3495795f46e794d546a57";//TODO add the access token from api.ai in here
+    private String CLIENT_ACCESS_TOKEN = "a3734c2b7a814306b4f0ce03f7754966\n";//TODO add the access token from api.ai in here e957b68ccce3495795f46e794d546a57
     private AIService aiService;
     private AIRequest text_req = new AIRequest();//for text request
     private AIDataService aiDataService;//for text request
