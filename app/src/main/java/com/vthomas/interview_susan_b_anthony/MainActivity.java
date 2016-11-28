@@ -139,7 +139,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
                     else{
                         q.set_text_string("I may have misunderstood the query.");
                         q.set_speech_string("I may have misunderstood the query. " +
-                                "Do you have a question about todays flights that I can help you with?");
+                                "Do you have a question about Susan B Anthony that I can help you with?");
                     }
 
                     //Show results in TextView
@@ -150,7 +150,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
                     scroller.fullScroll(ScrollView.FOCUS_DOWN);
 
                     // And speak it
-//                    speakWords(q.get_speech_string());
+                    speakWords(q.get_speech_string());
 
                 }
             }
