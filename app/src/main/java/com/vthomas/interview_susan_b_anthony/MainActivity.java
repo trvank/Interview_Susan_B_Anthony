@@ -95,7 +95,12 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
 
     public void send(View view) {
         Log.d("test0", "");
-        text_req.setQuery(user_text.getText().toString());
+        if (user_text.getText().toString().isEmpty()) {
+            text_req.setQuery("Empty query.");
+        }
+        else {
+            text_req.setQuery(user_text.getText().toString());
+        }
 
         new AsyncTask<AIRequest, Void, AIResponse>() {
             @Override
@@ -163,6 +168,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
 
     //action for the speak button will record the user's quesion and send to ai.api
     public void speak(View view) {
+        tts.stop();
         aiService.startListening();
     }
 
@@ -203,7 +209,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
         }, 1000);
 
         // And speak it
-//        speakWords(q.get_speech_string());
+        speakWords(q.get_speech_string());
     }
 
     //does the device need record permission???
