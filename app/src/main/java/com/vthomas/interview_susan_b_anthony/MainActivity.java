@@ -163,6 +163,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
     //ask Susan about
     public void help(View view) {
         Quotes temp = new Quotes();
+        result_text.setText("Help query");
         speakWords(temp.getQuoteOn(""));
     }
 
