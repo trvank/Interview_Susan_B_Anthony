@@ -40,7 +40,7 @@ public class Splash extends Activity implements TextToSpeech.OnInitListener {
     Thread timer = new Thread() {
         public void run() {
             try {
-                sleep(2000);
+                sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
@@ -69,7 +69,7 @@ public class Splash extends Activity implements TextToSpeech.OnInitListener {
     public void onInit(int initStatus) {
         if (initStatus == TextToSpeech.SUCCESS) {
             tts.setLanguage(Locale.US);
-//            tts.speak(text, TextToSpeech.QUEUE_ADD, null, null);
+            tts.speak(text, TextToSpeech.QUEUE_ADD, null, null);
         }
         else if (initStatus == TextToSpeech.ERROR) {
             Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();

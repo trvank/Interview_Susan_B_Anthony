@@ -164,7 +164,7 @@ public class Quotes {
         return quoteRandomizer(quotes);
     }
     private String getQuoteOnMiddleName() {//done
-        final int numQuotes = 3;
+        final int numQuotes = 1;
         String [] quotes = new String [numQuotes];
         quotes[0] = "My middle name is Brownell. I suppose that Susan Anthony is a fairly common name." +
                 "So that's why people refer to me as Susan B Anthony.";

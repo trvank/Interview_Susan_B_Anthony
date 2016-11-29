@@ -83,13 +83,13 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
             }
         });
 
-        /*
+
 //  This is required running on Thomas's, but not on Scott's
         //request permission for recording audio if not yet granted
         if(!hasPermission(perms[0])){
-            requestPermissions(perms, permsRequestCode);
+            //requestPermissions(perms, permsRequestCode);
         }
-        */
+
 
     }
 
@@ -143,9 +143,9 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
                     }
 
                     //Show results in TextView
-                    result_text.setText(result_text.getText() + "You: " + result.getResolvedQuery() + "\n\n");//add the user's question
-                    result_text.setText(result_text.getText() + "Action: " + result.getAction() +
-                            "\n\nParameters: " + parameterString +
+                    result_text.setText(result_text.getText() + "You: " + result.getResolvedQuery() + "");//add the user's question
+                    result_text.setText(result_text.getText() + //"Action: " + result.getAction() +
+                            //"\n\nParameters: " + parameterString +
                             "\n\nResponse: " + q.get_text_string() + "\n\n");
                     scroller.fullScroll(ScrollView.FOCUS_DOWN);
 
@@ -196,9 +196,9 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
         q = analyzer.getResult(result.getParameters(), result.getAction());
 
         //Show results in TextView
-        result_text.setText(result_text.getText() + "You: " + result.getResolvedQuery() + "\n\n");//add the user's question
-        result_text.setText(result_text.getText() + "Action: " + result.getAction() +
-                "\n\nParameters: " + parameterString +
+        result_text.setText(result_text.getText() + "You: " + result.getResolvedQuery() + "");//add the user's question
+        result_text.setText(result_text.getText() + //"Action: " + result.getAction() +
+                //"\n\nParameters: " + parameterString +
                 "\n\nResponse: " + q.get_text_string() + "\n\n");
         //scroller.fullScroll(ScrollView.FOCUS_DOWN);
 
