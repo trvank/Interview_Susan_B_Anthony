@@ -26,7 +26,8 @@ public class Analyzer {
 
         if (action.compareTo("select_topic") == 0) {
             //make sure parameter, otherwise error recieved with null.getAsString
-            if(map.containsKey("topic")) {
+            String test = map.get("topic").toString();
+            if(map.containsKey("topic") && !map.get("topic").toString().equals("[]")) {
                 topic = map.get("topic").getAsString();
                 topic.replace("\"", "");
                 quote = quotes.getQuoteOn(topic);
@@ -34,6 +35,7 @@ public class Analyzer {
                 q.set_text_string(quote);
             }
             else{
+                topic = "empty";
                 quote = quotes.getQuoteOn(topic);
                 q.set_speech_string(quote);
                 q.set_text_string(quote);
@@ -54,8 +56,6 @@ public class Analyzer {
                 q.set_text_string(quote);
             }
         }
-
-
         else { // doesn't match any action
             topic = "empty";
             quote = quotes.getQuoteOn(topic);
