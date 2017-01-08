@@ -58,7 +58,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //set up configuration of speech recognition
+        //set up configuration of speech recognition tools
         final AIConfiguration config = new AIConfiguration(CLIENT_ACCESS_TOKEN,
                 AIConfiguration.SupportedLanguages.English,
                 AIConfiguration.RecognitionEngine.System);
@@ -175,7 +175,7 @@ public class MainActivity extends Activity implements AIListener, TextToSpeech.O
 
     //Speaks the words to user
     private void speakWords(String speech) {
-        tts.speak(speech, TextToSpeech.QUEUE_ADD, null, null);
+        tts.speak(speech, TextToSpeech.QUEUE_ADD, null);//removed last null peram
     }
 
     //API.AI stuff here

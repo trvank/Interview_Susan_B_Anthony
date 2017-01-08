@@ -69,7 +69,7 @@ public class Splash extends Activity implements TextToSpeech.OnInitListener {
     public void onInit(int initStatus) {
         if (initStatus == TextToSpeech.SUCCESS) {
             tts.setLanguage(Locale.US);
-            tts.speak(text, TextToSpeech.QUEUE_ADD, null, null);
+            tts.speak(text, TextToSpeech.QUEUE_ADD, null);//removed last null peram
         }
         else if (initStatus == TextToSpeech.ERROR) {
             Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
@@ -77,7 +77,7 @@ public class Splash extends Activity implements TextToSpeech.OnInitListener {
     }
 
     private void speakWords(String speech) {
-        tts.speak(speech, TextToSpeech.QUEUE_ADD, null, null);
+        tts.speak(speech, TextToSpeech.QUEUE_ADD, null);//removed last null peram
     }
 
     protected void onDestroy() {
